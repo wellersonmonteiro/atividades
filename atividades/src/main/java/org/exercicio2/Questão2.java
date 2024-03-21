@@ -3,8 +3,6 @@ package org.exercicio2;
 import java.util.Scanner;
 
 public class Questão2 {
-    public int vert;
-    public int ares;
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         org.example.Question1 grafo = new org.example.Question1();
@@ -48,11 +46,5 @@ public class Questão2 {
         }
 
     }
-    public void setVer(int vert) {
-        this.vert = vert;
-    }
 
-    public void setAres(int ares) {
-        this.ares = ares;
-    }
 }
