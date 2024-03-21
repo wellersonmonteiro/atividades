@@ -2,16 +2,22 @@ package org.exercicio2;
 
 import java.util.Scanner;
 
-public class Questão2 {
+public class Questao2 {
+
+    public int vert;
+    public int ares;
+
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        org.example.Question1 grafo = new org.example.Question1();
+        Questao2 grafo = new Questao2();
 
+        boolean contem= false;
         System.out.println("--------------------------------------------------------------------------");
         System.out.println("Me informe a quantidade de vertices:");
         int valor = input.nextInt();
         grafo.setVer(valor);
 
+        int[][] matrizAdjacencia = new int[grafo.vert][grafo.vert];
 
         System.out.println("---------------------------------------------------------------------------");
         System.out.println("Me informe a quantidade de arestas:");
@@ -45,6 +51,39 @@ public class Questão2 {
             }
         }
 
+
+        System.out.println("Existe um vertice que se conecta com todos os outros: ");
+        //Matriz de adjacência
+        for (int i = 0; i < matrizincidencia.length; i++) {
+            int count = 0;
+            // Para cada linha, percorra todas as colunas
+            for (int j = 0; j < matrizincidencia[i].length; j++) {
+                // Se encontrar uma conexão (valor diferente de zero)
+                if (matrizincidencia[i][j] != 0) {
+                    // Encontre os vértices conectados e atualize a matriz de adjacência
+                    for (int k = 0; k < matrizincidencia.length; k++) {
+                        if (k != i && matrizincidencia[k][j] != 0) {
+                            count++;
+                        }
+                    } if(count == (grafo.vert) - 1){
+                        System.out.println("O vertece "+ (i +1));
+                        contem = true;
+                    }
+                }
+
+            }
+        }
+        if (!contem){
+            System.out.println("Não existe nenhum elemento!");
+        }
+
     }
 
+    public void setVer(int vert) {
+        this.vert = vert;
+    }
+
+    public void setAres(int ares) {
+        this.ares = ares;
+    }
 }
