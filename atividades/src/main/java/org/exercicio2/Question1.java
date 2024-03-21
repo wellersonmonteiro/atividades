@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Question1 {
 
-   public int vert;
+    public int vert;
     public int ares;
 
     public static void main(String[] args) {
@@ -83,10 +83,12 @@ public class Question1 {
             System.out.println();
         }
     }
-    public void setVer(int vert){
+
+    public void setVer(int vert) {
         this.vert = vert;
     }
-    public void setAres(int ares){
+
+    public void setAres(int ares) {
         this.ares = ares;
     }
 }
